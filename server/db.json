@@ -4,7 +4,7 @@
       "id": "1A",
       "seatNumber": "1A",
       "price": "£19.99",
-      "available": false,
+      "available": true,
       "disabilityAccessible": true
     },
     {
