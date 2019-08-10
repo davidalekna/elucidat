@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { ApolloProvider } from 'react-apollo';
 import GlobalStyle from './reset.css';
@@ -7,16 +8,22 @@ import * as serviceWorker from './serviceWorker';
 import { createClient } from './shared/graphql';
 import { theme } from './shared/theme';
 import { RootView } from './views/index';
+import storeConfig from './store';
+import ModalRoot from 'components/modals/modalRoot';
 
 const client = createClient();
+const store = storeConfig();
 
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme.dark}>
-      <ApolloProvider client={client}>
-        <GlobalStyle />
-        <RootView />
-      </ApolloProvider>
+      <Provider store={store}>
+        <ApolloProvider client={client}>
+          <GlobalStyle />
+          <ModalRoot />
+          <RootView />
+        </ApolloProvider>
+      </Provider>
     </ThemeProvider>
   );
 };

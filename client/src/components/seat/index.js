@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
-export const Seat = styled.div`
+export const Seat = styled.button`
   display: flex;
   flex: 1 1 auto;
   position: relative;
   align-items: center;
   justify-content: center;
   font-size: ${({ theme }) => theme.fontSizes[5]}px;
-  width: 140px;
-  height: 140px;
+  width: 80%;
+  height: 80%;
   justify-self: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -31,14 +31,12 @@ export const Seat = styled.div`
     content: ' ';
     position: absolute;
     margin: 0 auto;
-    top: -10px;
+    top: 0;
     left: 0;
     right: 0;
-    width: 80%;
-    height: 80%;
+    width: 74%;
+    height: 84%;
     background: rgba(0, 0, 0, 0.2);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }

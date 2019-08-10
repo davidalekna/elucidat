@@ -1,16 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import { Flex } from 'components/globals';
 import { Screen, Side } from 'components/screen';
 import { Seat } from 'components/seat';
 import { Query } from 'react-apollo';
 import { GET_THEATER_DATA } from 'shared/graphql/queries/seat/getSeats';
 import { Icon } from 'components/icons';
+import { openModal } from 'store/modals/actions';
 
 const Container = styled(Flex)`
   display: grid;
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  overflow: hidden;
   color: ${({ theme }) => theme.colors.primary[100]};
   background-image: linear-gradient(
     ${({ theme }) => theme.colors.neutral[200]},
@@ -25,11 +29,14 @@ const Grid = styled.div`
   display: grid;
   grid-gap: 40px;
   width: 100%;
+  min-height: 80%;
   grid-template-rows: auto;
   grid-template-columns: repeat(5, 1fr);
 `;
 
 export const RootView = () => {
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <Side left />
@@ -42,19 +49,22 @@ export const RootView = () => {
         >
           <Screen />
         </Flex>
-        <Flex alignItems="flex-end" height="100%" p="0 50px 50px 50px">
+        <Flex alignItems="flex-end" height="100%" p="0 50px">
           <Grid>
             <Query query={GET_THEATER_DATA}>
               {({ loading, error, data }) => {
-                if (loading) return 'loading';
+                if (loading) return null;
                 if (error) return 'error';
                 const { allSeats, cheapestSeat } = data;
-                console.log(data);
                 return allSeats.map(seat => (
                   <Seat
                     key={seat.seatNumber}
                     isAvailable={seat.available}
+                    disabled={!seat.available}
                     cheapestSeat={seat.seatNumber === cheapestSeat[0]}
+                    onClick={() =>
+                      dispatch(openModal('CREATE_BOOKING_MODAL', seat))
+                    }
                   >
                     {seat.disabilityAccessible && (
                       <Flex style={{ position: 'absolute', top: 10 }}>
