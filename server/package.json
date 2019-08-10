@@ -16,8 +16,10 @@
     "apollo-datasource-rest": "^0.6.0",
     "apollo-server": "^2.7.0",
     "apollo-server-express": "^2.7.0",
+    "concurrently": "^4.1.1",
     "cross-env": "^5.2.0",
     "debug": "^4.1.1",
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "graphql": "^14.4.2",
     "graphql-tools": "^4.0.5",
@@ -41,8 +43,9 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./dist/bundle.js",
-    "dev": "cross-env NODE_PATH=./ cross-env NODE_ENV=development cross-env DEBUG=api*,utils* webpack",
-    "build": "yarn webpack --env.mode production",
-    "json-server": "yarn json-server --watch db.json"
+    "graphql-server": "cross-env NODE_PATH=./ cross-env NODE_ENV=development cross-env DEBUG=api*,utils* webpack",
+    "json-server": "json-server -p 8081 --watch db.json",
+    "dev": "concurrently \"yarn json-server\" \"yarn graphql-server\"",
+    "build": "yarn webpack --env.mode production"
   }
 }
