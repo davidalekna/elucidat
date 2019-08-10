@@ -13,7 +13,8 @@ export const Seat = styled.button`
   border-top-right-radius: 5px;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
-  color: ${({ theme }) => theme.colors.primary[100]};
+  color: ${({ isAvailable, theme }) =>
+    isAvailable ? theme.colors.primary[100] : '#999'};
   background: ${({ isAvailable, cheapestSeat, theme }) => {
     if (isAvailable) return theme.colors.neutral[400];
     return theme.colors.neutral[200];

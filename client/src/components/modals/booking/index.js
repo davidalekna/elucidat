@@ -11,7 +11,7 @@ import { BOOK_SEAT } from 'shared/graphql/mutations/seat/bookSeat';
 import { GET_SEATS } from 'shared/graphql/queries/seat/getSeats';
 
 export default function BookingModal(seat) {
-  const [bookSeat, { loading }] = useMutation(BOOK_SEAT);
+  const [bookSeat, { loading, error }] = useMutation(BOOK_SEAT);
   const isOpen = useSelector(state => state.modals.isOpen);
   const dispatch = useDispatch();
 
@@ -33,6 +33,7 @@ export default function BookingModal(seat) {
             <Text>accessable - {seat.disabilityAccessible ? 'yes' : 'no'}</Text>
             <Text>price - {seat.price}</Text>
           </Flex>
+          {error && <Flex>{error}</Flex>}
           <Flex>
             <Button
               disabled={loading}

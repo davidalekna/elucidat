@@ -77,7 +77,7 @@ export const RootView = () => {
                       <Text fontSize={4} fontWeight={3} mb={0}>
                         {seat.seatNumber}
                       </Text>
-                      <Text fontSize={1}>{seat.price}</Text>
+                      {seat.available && <Text fontSize={1}>{seat.price}</Text>}
                     </Flex>
                   </Seat>
                 ));

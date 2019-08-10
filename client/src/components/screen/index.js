@@ -16,6 +16,7 @@ export const Side = styled.div.attrs(({ left }) => ({
 }))`
   width: 100%;
   height: 100%;
+  position: relative;
   background: ${({ theme }) => theme.colors.neutral[300]};
   transform: rotate(${({ deg }) => deg}deg)
     translate(${({ move }) => move}px, 0px) scale(2);
