@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "src",
+    "allowJs": true,
+    "preserveConstEnums": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "noFallthroughCasesInSwitch": true,
+    "pretty": true,
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "target": "es6",
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "removeComments": true,
+    "lib": ["esnext"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}

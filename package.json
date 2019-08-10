@@ -1,0 +1,10 @@
+{
+  "name": "elucidat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "David Alekna",
+  "license": "MIT",
+  "scripts": {
+    "backend-start": ""
+  }
+}
