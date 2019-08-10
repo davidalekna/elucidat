@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   * {
     border: 0;
     box-sizing: inherit;
-    -webkit-font-smoothing: auto;
+    -webkit-font-smoothing: antialiased;
     font-weight: inherit;
     margin: 0;
     outline: 0;
@@ -15,21 +15,28 @@ const GlobalStyle = createGlobalStyle`
     -moz-appearance: none;
   }
   html {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
     box-sizing: border-box;
-    font-size: 14px;
-    line-height: 1.5;
-    background-color: #ffffff;
-    color: #16171a;
+    font-size: 16px;
+    line-height: 1em;
     padding: 0;
     margin: 0;
     -webkit-font-smoothing: antialiased;
-    overflow-wrap: break-word;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+      sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   }
   body {
-    font-family: 'Montserrat', sans-serif;
+    display: flex;
     box-sizing: border-box;
+    flex: auto;
+    align-self: stretch;
+    max-width: 100%;
+    max-height: 100%;
     -webkit-overflow-scrolling: touch;
-    height: 100vh;
   }
   a {
     color: currentColor;
@@ -41,33 +48,6 @@ const GlobalStyle = createGlobalStyle`
   textarea {
     resize: none;
   }
-  ::-moz-selection {
-    /* Code for Firefox */
-    background: #f8eaff;
-    color: #000;
-  }
-  ::selection {
-    background: #f8eaff;
-    color: #000;
-  }
-  ::-webkit-input-placeholder {
-    /* WebKit, Blink, Edge */
-    color: #a3afbf;
-  }
-  :-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
-    color: #a3afbf;
-    opacity: 1;
-  }
-  ::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    color: #a3afbf;
-    opacity: 1;
-  }
-  :-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: #a3afbf;
-  }
   #root {
     display: flex;
     display: -webkit-box;
@@ -78,8 +58,8 @@ const GlobalStyle = createGlobalStyle`
     -ms-flex-direction: column;
     -moz-flex-direction: column;
     -webkit-flex-direction: column;
-    width: 100%;
     height: 100%;
+    width: 100%;
   }
 `;
 

@@ -5,14 +5,14 @@ import { ApolloProvider } from 'react-apollo';
 import GlobalStyle from './reset.css';
 import * as serviceWorker from './serviceWorker';
 import { createClient } from './shared/graphql';
+import { theme } from './shared/theme';
 import { RootView } from './views/index';
 
 const client = createClient();
-const theme = {};
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme.dark}>
       <ApolloProvider client={client}>
         <GlobalStyle />
         <RootView />
