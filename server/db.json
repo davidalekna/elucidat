@@ -1,150 +1,175 @@
 {
   "seats": [
     {
+      "id": "1A",
       "seatNumber": "1A",
       "price": "£19.99",
-      "available": true,
+      "available": false,
       "disabilityAccessible": true
     },
     {
+      "id": "2A",
       "seatNumber": "2A",
       "price": "£19.99",
       "available": false,
       "disabilityAccessible": false
     },
     {
+      "id": "3A",
       "seatNumber": "3A",
       "price": "£19.99",
       "available": false,
       "disabilityAccessible": false
     },
     {
+      "id": "4A",
       "seatNumber": "4A",
       "price": "£19.99",
       "available": true,
       "disabilityAccessible": false
     },
     {
+      "id": "5A",
       "seatNumber": "5A",
       "price": "£19.99",
       "available": false,
       "disabilityAccessible": false
     },
     {
+      "id": "1B",
       "seatNumber": "1B",
       "price": "£12.99",
       "available": true,
       "disabilityAccessible": true
     },
     {
+      "id": "2B",
       "seatNumber": "2B",
       "price": "£12.99",
       "available": false,
       "disabilityAccessible": false
     },
     {
+      "id": "3B",
       "seatNumber": "3B",
       "price": "£12.99",
       "available": false,
       "disabilityAccessible": false
     },
     {
+      "id": "4B",
       "seatNumber": "4B",
       "price": "£12.99",
       "available": false,
       "disabilityAccessible": false
     },
     {
+      "id": "5B",
       "seatNumber": "5B",
       "price": "£12.99",
       "available": true,
       "disabilityAccessible": false
     },
     {
+      "id": "1C",
       "seatNumber": "1C",
       "price": "£12.99",
       "available": true,
       "disabilityAccessible": true
     },
     {
+      "id": "2C",
       "seatNumber": "2C",
       "price": "£12.99",
       "available": true,
       "disabilityAccessible": false
     },
     {
+      "id": "3C",
       "seatNumber": "3C",
       "price": "£12.99",
       "available": true,
       "disabilityAccessible": false
     },
     {
+      "id": "4C",
       "seatNumber": "4C",
       "price": "£12.99",
       "available": true,
       "disabilityAccessible": false
     },
     {
+      "id": "5C",
       "seatNumber": "5C",
       "price": "£12.99",
       "available": true,
       "disabilityAccessible": false
     },
     {
+      "id": "1D",
       "seatNumber": "1D",
       "price": "£12.99",
       "available": true,
       "disabilityAccessible": true
     },
     {
+      "id": "2D",
       "seatNumber": "2D",
       "price": "£12.99",
       "available": false,
       "disabilityAccessible": false
     },
     {
+      "id": "3D",
       "seatNumber": "3D",
       "price": "£12.99",
       "available": true,
       "disabilityAccessible": false
     },
     {
+      "id": "4D",
       "seatNumber": "4D",
       "price": "£12.99",
       "available": true,
       "disabilityAccessible": false
     },
     {
+      "id": "5D",
       "seatNumber": "5D",
       "price": "£12.99",
       "available": true,
       "disabilityAccessible": false
     },
     {
+      "id": "1E",
       "seatNumber": "1E",
       "price": "£8.99",
       "available": true,
       "disabilityAccessible": true
     },
     {
+      "id": "2E",
       "seatNumber": "2E",
       "price": "£8.99",
       "available": true,
       "disabilityAccessible": false
     },
     {
+      "id": "3E",
       "seatNumber": "3E",
       "price": "£8.99",
       "available": false,
       "disabilityAccessible": false
     },
     {
+      "id": "4E",
       "seatNumber": "4E",
       "price": "£8.99",
       "available": true,
       "disabilityAccessible": false
     },
     {
+      "id": "5E",
       "seatNumber": "5E",
       "price": "£8.99",
       "available": true,

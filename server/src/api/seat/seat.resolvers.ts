@@ -23,9 +23,12 @@ export default {
   Mutation: {
     bookSeat: async (_, { input }, { instance }) => {
       const { seatNumber } = input;
-      console.log(seatNumber);
-      // TODO
-      return {};
+      const { data: seat } = await instance.get(`seats/${seatNumber}`);
+      const { data } = await instance.put(`seats/${seatNumber}`, {
+        ...seat,
+        available: false,
+      });
+      return data;
     },
   },
 };

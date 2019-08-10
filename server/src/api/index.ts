@@ -11,7 +11,12 @@ const schema = {
   resolvers,
   context: ({ req }) => ({
     req,
-    instance: axios.create({ baseURL: process.env.JSON_SERVER }),
+    instance: axios.create({
+      baseURL: process.env.JSON_SERVER,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }),
   }),
   tracing: true,
   introspection: true,
