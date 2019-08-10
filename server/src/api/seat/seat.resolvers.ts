@@ -13,7 +13,7 @@ export default {
     },
     getCheapestSeat: async (_, args, { instance }) => {
       const { data } = await instance.get('seats');
-      const getPrice = s => parseFloat(s.replace(/[^0-9.-]+/g, ''));
+      const getPrice = (s: string) => parseFloat(s.replace(/[^0-9.-]+/g, ''));
       const [cheapest] = data.sort((a, b) => {
         return getPrice(a.price) - getPrice(b.price);
       });
@@ -21,7 +21,9 @@ export default {
     },
   },
   Mutation: {
-    bookSeat: async (_, { seatNumber }, { instance }) => {
+    bookSeat: async (_, { input }, { instance }) => {
+      const { seatNumber } = input;
+      console.log(seatNumber);
       // TODO
       return {};
     },

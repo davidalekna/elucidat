@@ -15,10 +15,11 @@ export default gql`
   }
 
   type Mutation {
-    bookSeat: Seat
+    bookSeat(input: SeatInput): Seat
   }
 
   input SeatInput {
-    disabled: Boolean!
+    seatNumber: String
+    disabled: Boolean
   }
 `;
