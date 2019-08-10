@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { Flex } from 'components/globals';
+import { Flex, Text } from 'components/globals';
 import { Screen, Side } from 'components/screen';
 import { Seat } from 'components/seat';
 import { Query } from 'react-apollo';
-import { GET_THEATER_DATA } from 'shared/graphql/queries/seat/getSeats';
+import { GET_SEATS } from 'shared/graphql/queries/seat/getSeats';
 import { Icon } from 'components/icons';
 import { openModal } from 'store/modals/actions';
 
@@ -51,31 +51,34 @@ export const RootView = () => {
         </Flex>
         <Flex alignItems="flex-end" height="100%" p="0 50px">
           <Grid>
-            <Query query={GET_THEATER_DATA}>
+            <Query query={GET_SEATS}>
               {({ loading, error, data }) => {
                 if (loading) return null;
                 if (error) return 'error';
-                const { allSeats, cheapestSeat } = data;
-                return allSeats.map(seat => (
+                return data.allSeats.map(seat => (
                   <Seat
                     key={seat.seatNumber}
                     isAvailable={seat.available}
                     disabled={!seat.available}
-                    cheapestSeat={seat.seatNumber === cheapestSeat[0]}
                     onClick={() =>
                       dispatch(openModal('CREATE_BOOKING_MODAL', seat))
                     }
                   >
                     {seat.disabilityAccessible && (
-                      <Flex style={{ position: 'absolute', top: 10 }}>
+                      <Flex style={{ position: 'absolute', top: 5, left: 4 }}>
                         <Icon
                           name="accessible"
-                          size={32}
+                          size={18}
                           style={{ fill: 'aqua' }}
                         />
                       </Flex>
                     )}
-                    {seat.seatNumber}
+                    <Flex flexDirection="column">
+                      <Text fontSize={4} fontWeight={3} mb={0}>
+                        {seat.seatNumber}
+                      </Text>
+                      <Text fontSize={1}>{seat.price}</Text>
+                    </Flex>
                   </Seat>
                 ));
               }}

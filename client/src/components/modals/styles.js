@@ -12,7 +12,7 @@ export const ModalWrapper = styled.div`
 export const modalStyles = ({ maxWidth = 500 } = {}) => {
   return {
     overlay: {
-      background: 'rgba(99, 101, 114, 0.6)',
+      background: 'rgba(84, 84, 84, 0.4)',
       display: 'flex',
       width: '100%',
       height: '100%',

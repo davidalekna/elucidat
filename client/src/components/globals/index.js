@@ -19,3 +19,13 @@ export const Flex = styled('div').attrs(() => ({
     color,
   ),
 );
+
+export const Text = styled('span').attrs(() => ({
+  overflowWrap: 'break-word',
+}))(
+  compose(
+    typography,
+    space,
+    color,
+  ),
+);

@@ -1,10 +1,7 @@
 import gql from 'graphql-tag';
 
-export const GET_THEATER_DATA = gql`
-  query getTheaterData {
-    cheapestSeat: getCheapestSeat
-    disabledSeats: getAvailableSeats(input: { disabled: true })
-    otherSeats: getAvailableSeats(input: { disabled: false })
+export const GET_SEATS = gql`
+  query getSeats {
     allSeats: getSeats {
       seatNumber
       price

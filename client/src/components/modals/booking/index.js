@@ -4,6 +4,8 @@ import ModalContainer from '../modalContainer';
 import { useSelector, useDispatch } from 'react-redux';
 import { modalStyles } from '../styles';
 import { closeModal } from 'store/modals/actions';
+import { Seat } from 'components/seat';
+import { Flex } from 'components/globals';
 
 export default function AudienceModal(seat) {
   const isOpen = useSelector(state => state.modals.isOpen);
@@ -18,10 +20,16 @@ export default function AudienceModal(seat) {
       contentLabel="Seat Booking Modal"
       onRequestClose={() => dispatch(closeModal())}
       shouldCloseOnOverlayClick={false}
-      style={modalStyles({ maxWidth: 750 })}
+      style={modalStyles({ maxWidth: 500 })}
       closeTimeoutMS={330}
     >
-      <ModalContainer>hello world</ModalContainer>
+      <ModalContainer>
+        <Flex flexDirection="column" alignItems="center">
+          <Flex height="200px" width="90%">
+            <Seat>{seat.seatNumber}</Seat>
+          </Flex>
+        </Flex>
+      </ModalContainer>
     </Modal>
   );
 }
