@@ -1,8 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { ThemeProvider } from 'styled-components';
+import { ApolloProvider } from 'react-apollo';
+import GlobalStyle from './reset.css';
 import * as serviceWorker from './serviceWorker';
+import { createClient } from './shared/graphql';
+import { RootView } from './views/index';
+
+const client = createClient();
+const theme = {};
+
+const App: React.FC = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <ApolloProvider client={client}>
+        <GlobalStyle />
+        <RootView />
+      </ApolloProvider>
+    </ThemeProvider>
+  );
+};
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
