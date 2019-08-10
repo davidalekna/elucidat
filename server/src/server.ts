@@ -3,7 +3,7 @@ import { ApolloServer } from 'apollo-server-express';
 import setupMiddware from './middleware';
 import apolloConfig from './api';
 
-export const app = express();
+const app = express();
 const apolloServer = new ApolloServer(apolloConfig);
 setupMiddware(app, apolloServer);
 

@@ -2,20 +2,23 @@ import { gql } from 'apollo-server-express';
 
 export default gql`
   type Seat {
-    id: ID
-    title: String
-    release_date: String
-    count_stars: Int
-    director_id: ID
+    seatNumber: String
+    price: String
+    available: Boolean
+    disabilityAccessible: Boolean
   }
 
   type Query {
     getSeats: [Seat]
-    availableSeats: [Seat]
-    cheapestSeat: [Seat]
+    getAvailableSeats(input: SeatInput): [String]
+    getCheapestSeat: [String]
   }
 
   type Mutation {
     bookSeat: Seat
+  }
+
+  input SeatInput {
+    disabled: Boolean!
   }
 `;

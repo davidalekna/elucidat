@@ -1,17 +1,30 @@
 export default {
   Query: {
-    getSeats: async () => {
-      return [];
+    getSeats: async (_, args, { instance }) => {
+      const { data } = await instance.get('seats');
+      return data;
     },
-    availableSeats: async () => {
-      return [];
+    getAvailableSeats: async (_, { input }, { instance }) => {
+      const { disabled } = input;
+      const { data } = await instance.get(
+        `seats?disabilityAccessible=${disabled}`,
+      );
+      return data.map(seat => seat.seatNumber);
     },
-    cheapestSeat: async () => {
-      return [];
+    getCheapestSeat: async (_, args, { instance }) => {
+      const { data } = await instance.get('seats');
+      const keepNumber = s => s.replace(/[^0-9.-]+/g, '');
+      const [cheapest] = data.sort((a, b) => {
+        return (
+          parseFloat(keepNumber(a.price)) - parseFloat(keepNumber(b.price))
+        );
+      });
+      return [cheapest.seatNumber];
     },
   },
   Mutation: {
-    bookSeat: async () => {
+    bookSeat: async (_, { seatNumber }, { instance }) => {
+      // TODO
       return {};
     },
   },

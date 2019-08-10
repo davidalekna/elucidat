@@ -6,11 +6,6 @@ export default function setGlobalMiddleware(app: Express, server) {
     app,
     path: '/graphql',
     bodyParser: true,
-    cors: {
-      origin: (origin: any, callback: any) => {
-        callback(null, true);
-      },
-      credentials: true,
-    },
+    cors: false,
   });
 }

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { merge } from 'lodash';
 import seat from './seat';
 
@@ -10,9 +11,10 @@ const schema = {
   resolvers,
   context: ({ req }) => ({
     req,
+    instance: axios.create({ baseURL: process.env.JSON_SERVER }),
   }),
-  tracing: false,
-  introspection: false,
+  tracing: true,
+  introspection: true,
   playground: true,
   cacheControl: {
     defaultMaxAge: 5,
