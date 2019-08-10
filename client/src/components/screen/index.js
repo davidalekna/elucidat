@@ -20,4 +20,19 @@ export const Side = styled.div.attrs(({ left }) => ({
   background: ${({ theme }) => theme.colors.neutral[300]};
   transform: rotate(${({ deg }) => deg}deg)
     translate(${({ move }) => move}px, 0px) scale(2);
+
+  &:after {
+    content: 'Exit';
+    position: absolute;
+    left: ${({ left }) => (left ? 'auto' : 0)};
+    right: ${({ left }) => (left ? 0 : 'auto')};
+    height: 50px;
+    background: green;
+    text-align: center;
+    top: 360px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
 `;
+
+export const ExitSign = styled.div``;

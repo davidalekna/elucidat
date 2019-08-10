@@ -39,7 +39,7 @@ export const RootView = () => {
 
   return (
     <Container>
-      <Side left />
+      <Side left={true} />
       <Flex flexDirection="column">
         <Flex
           flex="0 0 auto"
