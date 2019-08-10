@@ -25,7 +25,7 @@
       "id": "4A",
       "seatNumber": "4A",
       "price": "£19.99",
-      "available": true,
+      "available": false,
       "disabilityAccessible": false
     },
     {
@@ -67,7 +67,7 @@
       "id": "5B",
       "seatNumber": "5B",
       "price": "£12.99",
-      "available": true,
+      "available": false,
       "disabilityAccessible": false
     },
     {
