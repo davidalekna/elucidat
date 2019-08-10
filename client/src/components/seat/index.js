@@ -10,6 +10,8 @@ export const Seat = styled.div`
   width: 140px;
   height: 140px;
   justify-self: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   color: ${({ theme }) => theme.colors.primary[100]};
@@ -23,5 +25,21 @@ export const Seat = styled.div`
 
   &:hover {
     background: ${({ isAvailable }) => isAvailable && 'green'};
+  }
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    margin: 0 auto;
+    top: -10px;
+    left: 0;
+    right: 0;
+    width: 80%;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 `;

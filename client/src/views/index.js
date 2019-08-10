@@ -23,7 +23,7 @@ const Container = styled(Flex)`
 
 const Grid = styled.div`
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 40px;
   width: 100%;
   grid-template-rows: auto;
   grid-template-columns: repeat(5, 1fr);
@@ -42,7 +42,7 @@ export const RootView = () => {
         >
           <Screen />
         </Flex>
-        <Flex alignItems="flex-end" height="100%" p="0 50px 100px 50px">
+        <Flex alignItems="flex-end" height="100%" p="0 50px 50px 50px">
           <Grid>
             <Query query={GET_THEATER_DATA}>
               {({ loading, error, data }) => {
@@ -57,8 +57,12 @@ export const RootView = () => {
                     cheapestSeat={seat.seatNumber === cheapestSeat[0]}
                   >
                     {seat.disabilityAccessible && (
-                      <Flex style={{ position: 'absolute', left: 4, top: 4 }}>
-                        <Icon name="accessible" style={{ fill: 'aqua' }} />
+                      <Flex style={{ position: 'absolute', top: 10 }}>
+                        <Icon
+                          name="accessible"
+                          size={32}
+                          style={{ fill: 'aqua' }}
+                        />
                       </Flex>
                     )}
                     {seat.seatNumber}

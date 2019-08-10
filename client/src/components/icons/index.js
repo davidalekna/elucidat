@@ -33,6 +33,7 @@ icons.set('accessible', () => (
 
 export const Icon = ({ name, ...props }) => {
   const SelectedIcon = icons.get(name.toLowerCase());
+  if (!SelectedIcon) throw new Error(`icon ${name} icon doesn't exist`);
   return (
     <SVG {...props}>
       <SelectedIcon />
