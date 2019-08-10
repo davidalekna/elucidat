@@ -13,11 +13,9 @@ export default {
     },
     getCheapestSeat: async (_, args, { instance }) => {
       const { data } = await instance.get('seats');
-      const keepNumber = s => s.replace(/[^0-9.-]+/g, '');
+      const getPrice = s => parseFloat(s.replace(/[^0-9.-]+/g, ''));
       const [cheapest] = data.sort((a, b) => {
-        return (
-          parseFloat(keepNumber(a.price)) - parseFloat(keepNumber(b.price))
-        );
+        return getPrice(a.price) - getPrice(b.price);
       });
       return [cheapest.seatNumber];
     },
