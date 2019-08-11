@@ -10,6 +10,7 @@ import { theme } from './shared/theme';
 import { RootView } from './views/index';
 import storeConfig from './store';
 import ModalRoot from 'components/modals/modalRoot';
+import { ToastsProvider } from 'components/toasts';
 
 const client = createClient();
 const store = storeConfig();
@@ -17,13 +18,15 @@ const store = storeConfig();
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme.dark}>
-      <Provider store={store}>
-        <ApolloProvider client={client}>
+      <ApolloProvider client={client}>
+        <Provider store={store}>
           <GlobalStyle />
-          <ModalRoot />
-          <RootView />
-        </ApolloProvider>
-      </Provider>
+          <ToastsProvider>
+            <ModalRoot />
+            <RootView />
+          </ToastsProvider>
+        </Provider>
+      </ApolloProvider>
     </ThemeProvider>
   );
 };

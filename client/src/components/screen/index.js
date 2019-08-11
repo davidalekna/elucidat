@@ -29,9 +29,10 @@ export const Side = styled.div.attrs(({ left }) => ({
     height: 50px;
     background: green;
     text-align: center;
-    top: 360px;
+    top: 30%;
     writing-mode: vertical-rl;
     text-orientation: mixed;
+    transform: ${({ left }) => left && 'rotate(180deg)'};
   }
 `;
 

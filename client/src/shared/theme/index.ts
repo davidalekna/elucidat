@@ -20,7 +20,7 @@ export const theme = {
         success: {},
       },
     },
-    fontSizes: [12, 14, 16, 18, 21, 27],
+    fontSizes: [12, 14, 16, 18, 21, 27, 32],
     fontWeights: [300, 400, 500, 700],
     space: [5, 10, 15, 20, 25, 30],
   },

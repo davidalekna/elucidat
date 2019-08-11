@@ -4,21 +4,21 @@
       "id": "1A",
       "seatNumber": "1A",
       "price": "£19.99",
-      "available": true,
+      "available": false,
       "disabilityAccessible": true
     },
     {
       "id": "2A",
       "seatNumber": "2A",
       "price": "£19.99",
-      "available": false,
+      "available": true,
       "disabilityAccessible": false
     },
     {
       "id": "3A",
       "seatNumber": "3A",
       "price": "£19.99",
-      "available": false,
+      "available": true,
       "disabilityAccessible": false
     },
     {
@@ -46,21 +46,21 @@
       "id": "2B",
       "seatNumber": "2B",
       "price": "£12.99",
-      "available": false,
+      "available": true,
       "disabilityAccessible": false
     },
     {
       "id": "3B",
       "seatNumber": "3B",
       "price": "£12.99",
-      "available": false,
+      "available": true,
       "disabilityAccessible": false
     },
     {
       "id": "4B",
       "seatNumber": "4B",
       "price": "£12.99",
-      "available": false,
+      "available": true,
       "disabilityAccessible": false
     },
     {
@@ -88,35 +88,35 @@
       "id": "3C",
       "seatNumber": "3C",
       "price": "£12.99",
-      "available": false,
+      "available": true,
       "disabilityAccessible": false
     },
     {
       "id": "4C",
       "seatNumber": "4C",
       "price": "£12.99",
-      "available": true,
+      "available": false,
       "disabilityAccessible": false
     },
     {
       "id": "5C",
       "seatNumber": "5C",
       "price": "£12.99",
-      "available": true,
+      "available": false,
       "disabilityAccessible": false
     },
     {
       "id": "1D",
       "seatNumber": "1D",
       "price": "£12.99",
-      "available": true,
+      "available": false,
       "disabilityAccessible": true
     },
     {
       "id": "2D",
       "seatNumber": "2D",
       "price": "£12.99",
-      "available": false,
+      "available": true,
       "disabilityAccessible": false
     },
     {
@@ -137,7 +137,7 @@
       "id": "5D",
       "seatNumber": "5D",
       "price": "£12.99",
-      "available": true,
+      "available": false,
       "disabilityAccessible": false
     },
     {
@@ -158,7 +158,7 @@
       "id": "3E",
       "seatNumber": "3E",
       "price": "£8.99",
-      "available": false,
+      "available": true,
       "disabilityAccessible": false
     },
     {
@@ -172,7 +172,7 @@
       "id": "5E",
       "seatNumber": "5E",
       "price": "£8.99",
-      "available": true,
+      "available": false,
       "disabilityAccessible": false
     }
   ]

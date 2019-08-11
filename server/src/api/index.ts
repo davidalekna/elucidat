@@ -21,11 +21,7 @@ const schema = {
   tracing: true,
   introspection: true,
   playground: true,
-  cacheControl: {
-    defaultMaxAge: 5,
-    stripFormattedExtensions: false,
-    calculateCacheControlHeaders: false,
-  },
+  cacheControl: false,
 };
 
 export default schema;

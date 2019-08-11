@@ -5,7 +5,9 @@ import { ApolloLink } from 'apollo-link';
 import { createPersistedQueryLink } from 'apollo-link-persisted-queries';
 
 export function createClient() {
-  const cache = new InMemoryCache();
+  const cache = new InMemoryCache({
+    dataIdFromObject: (object: any) => object.key || null,
+  });
 
   return new ApolloClient({
     link: ApolloLink.from([

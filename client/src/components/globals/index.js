@@ -29,3 +29,8 @@ export const Text = styled('span').attrs(() => ({
     color,
   ),
 );
+
+export const ErrorMessage = styled.div`
+  color: red;
+  padding: 15px;
+`;

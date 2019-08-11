@@ -8,6 +8,7 @@ import { Query } from 'react-apollo';
 import { GET_SEATS } from 'shared/graphql/queries/seat/getSeats';
 import { Icon } from 'components/icons';
 import { openModal } from 'store/modals/actions';
+import { useToastContext, Toast } from 'components/toasts';
 
 const Container = styled(Flex)`
   display: grid;
@@ -35,10 +36,12 @@ const Grid = styled.div`
 `;
 
 export const RootView = () => {
+  const { toast } = useToastContext();
   const dispatch = useDispatch();
 
   return (
     <Container>
+      {toast && <Toast children={toast} />}
       <Side left={true} />
       <Flex flexDirection="column">
         <Flex
@@ -55,7 +58,7 @@ export const RootView = () => {
               {({ loading, error, data }) => {
                 if (loading) return null;
                 if (error) return 'error';
-                return data.allSeats.map(seat => (
+                return data.getSeats.map(seat => (
                   <Seat
                     key={seat.seatNumber}
                     isAvailable={seat.available}
