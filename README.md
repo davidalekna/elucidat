@@ -1,3 +1,1 @@
 ## Elucidat Cinema App
-
-### Setup

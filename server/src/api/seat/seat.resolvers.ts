@@ -24,7 +24,10 @@ export default {
     bookSeat: async (_, { input }, { instance }) => {
       const { seatNumber } = input;
       const { data: seat } = await instance.get(`seats/${seatNumber}`);
+      // seats are served in first come first served basis. If seat was booked
+      // it will throw an error to notify the end user.
       if (!seat.available) throw Error('Sorry, this seat was already booked!');
+      // otherwise lets book the seat
       const { data } = await instance.put(`seats/${seatNumber}`, {
         ...seat,
         available: false,

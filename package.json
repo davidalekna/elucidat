@@ -5,6 +5,8 @@
   "author": "David Alekna",
   "license": "MIT",
   "scripts": {
-    "backend-start": ""
+    "postinstall": "cd client && yarn install && cd ../server yarn install",
+    "backend-start": "cd server && yarn dev",
+    "start-frontend": "cd client && yarn dev"
   }
 }

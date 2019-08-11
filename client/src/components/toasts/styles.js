@@ -49,7 +49,7 @@ export const Toast = styled.div`
   line-height: 1.1em;
   text-align: center;
   color: #9ef542;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 99999;
 
   animation: ${slideWithBouce} 800ms ease-in-out;

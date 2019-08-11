@@ -31,7 +31,7 @@ export default function BookingModal(seat) {
         variables: { input: { seatNumber: seat.seatNumber } },
         refetchQueries: [{ query: GET_SEATS }],
       });
-      setToast('Congratulation! Your booking was successfull');
+      setToast('Congratulation! Your booking was successful');
       dispatch(closeModal());
     } catch (err) {
       console.log(err);
