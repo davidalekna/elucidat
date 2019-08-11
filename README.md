@@ -6,4 +6,4 @@
 run following commands from root project folder
 
 - terminal 1# `yarn backend-start`
-- termimal 2# `yarn start-frontend`
+- terminal 2# `yarn start-frontend`
