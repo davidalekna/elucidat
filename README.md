@@ -1,9 +1,9 @@
 ## Elucidat cinema app setup
 
-- `yarn install` dependencies for client
-- `yarn install` dependencies for server
+- `yarn install` dependencies for the client
+- `yarn install` dependencies for the server
 
-run following commands from root project folder
+run the following commands from the root project folder
 
 - terminal 1# `yarn backend-start`
 - terminal 2# `yarn start-frontend`
